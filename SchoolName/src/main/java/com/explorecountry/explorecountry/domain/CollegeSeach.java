@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 @Data
@@ -18,13 +19,7 @@ public class CollegeSeach {
     private int StudentSize;
     private School school;
 
-//    public CollegeSeach(int zipCode, String distance, String predominant, int year, int numberPage) {
-//        this.zipCode = zipCode;
-//        this.distance=distance;
-//        this.predominant =predominant;
-//        this.year=year;
-//        this.numberPage = numberPage;
-//    }
+
 
     @Override
     public boolean equals(Object o) {

@@ -9,6 +9,7 @@ public interface ExploreSchoolService {
 
     List<CollegeSeach> getSchoolsDetais(CollegeSeach zipCode) throws  Exception;
 
+    Integer getCountShoolDetails(CollegeSeach collegeSeach) throws Exception;
 
 
 }

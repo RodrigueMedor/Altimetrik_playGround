@@ -32,24 +32,23 @@ public class ExploreSchoolServiceImpl implements ExploreSchoolService {
          if(URL == null || URL.trim().isEmpty())
              throw new Exception("400");
 
-
-
-
         ResponseEntity responseEntity = restTemplate.getForEntity(URL, Object.class);
 
         LinkedHashMap bodyResponse = (LinkedHashMap)responseEntity.getBody();
 
-        List<List<CollegeSeach>> colleges = (List<List<CollegeSeach>>) bodyResponse.get("results");
+        List<TreeSet<CollegeSeach>> colleges = (List<TreeSet<CollegeSeach>>) bodyResponse.get("results");
+
+
         List col = colleges.stream().collect(Collectors.toList());
 
         return col;
 
-   }
+    }
 
-
-
-
-
+    @Override
+    public Integer getCountShoolDetails(CollegeSeach collegeSeach) throws Exception {
+        return getSchoolsDetais(collegeSeach).size();
+    }
 
 
 }
